@@ -20,8 +20,8 @@ export class PassegerController {
     }
 
     @MessagePattern(PassengerMSG.FIND_ONE)
-    findOne(@Payload() id :string){
-        return this.passegerService.findOne(id);
+    async findOne(@Payload() id :string){
+        return await this.passegerService.findOne(id);
     }
     @MessagePattern(PassengerMSG.UPDATE)
     update(@Payload() payload : any){
